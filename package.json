@@ -1,6 +1,6 @@
 {
-  "name": "vscode-ext-test",
-  "displayName": "vscode-ext-test",
+  "name": "i18n-hover",
+  "displayName": "i18n-hover",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -15,11 +15,16 @@
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      {
-        "command": "vscode-ext-test.toggleReplaceFeature",
-        "title": "Toggle Replace Feature"
+    ],
+    "configuration": {
+      "properties": {
+        "i18n-hover.jsonPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to JSON file"
+        }
       }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
@@ -27,7 +32,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "make": "vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",

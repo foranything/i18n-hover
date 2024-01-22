@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-const COMMAND = "vscode-ext-test.toggleReplaceFeature";
+const COMMAND = "i18n-hover.toggleReplaceFeature";
 
 const label = {
   off: `$(x) Replace OFF`,
